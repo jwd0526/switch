@@ -1,0 +1,52 @@
+/* Main styles entry point - imports all modular CSS files */
+
+/* Base styles and variables */
+@import './base.css';
+
+/* Animation keyframes */
+@import './animations.css';
+
+/* Component styles */
+@import './components/app.css';
+@import './components/button.css';
+@import './components/modal.css';
+@import './components/leaderboard.css';
+@import './components/info.css';
+
+/* Responsive design */
+@import './responsive.css';
+
+/* Legacy compatibility classes - TODO: Remove when components are updated */
+.leaderboard-overlay {
+  /* Same styles as modal-overlay */
+  position: fixed;
+  display: table;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  z-index: var(--z-modal);
+}
+
+.leaderboard-background {
+  /* Same styles as modal-background */
+  display: table-cell;
+  background: rgba(0,0,0,.7);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.leaderboard-modal {
+  /* Same styles as modal-content */
+  background: var(--color-surface);
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  width: 400px;
+  height: 450px;
+  color: var(--color-text);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
