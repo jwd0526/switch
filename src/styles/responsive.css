@@ -2,9 +2,32 @@
 
 /* Mobile devices (up to 768px) */
 @media (max-width: 768px) {
-  /* Navigation controls adjustments */
+  /* Fix mobile viewport issues */
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  #root {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  .app-container {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  /* Navigation controls adjustments - use safe area and fixed pixel values */
   .nav-controls {
-    bottom: 15%;
+    bottom: max(20px, env(safe-area-inset-bottom, 20px));
+    position: fixed;
+    z-index: 1000;
+  }
+
+  /* Additional mobile browser fixes */
+  .game-board {
+    padding-bottom: 120px; /* Ensure game board has space for controls */
   }
 
   /* Make all nav buttons square on mobile */
@@ -92,18 +115,8 @@
   }
 }
 
-/* Dark mode support (if system preference changes) */
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-background: #f5f5f5;
-    --color-surface: #ffffff;
-    --color-surface-hover: #f0f0f0;
-    --color-border: #e0e0e0;
-    --color-text: #333333;
-    --color-text-muted: #666666;
-    --color-text-dim: #999999;
-  }
-}
+/* Force dark mode regardless of system preference */
+/* Removed automatic light mode adaptation to maintain consistent game design */
 
 /* Focus styles for keyboard navigation */
 @media (any-hover: none) {

@@ -74,6 +74,10 @@ html, body {
   background: var(--color-background);
   color: var(--color-text);
   overflow: hidden;
+
+  /* Force dark mode and prevent browser-level color inversions */
+  color-scheme: dark;
+  -webkit-color-scheme: dark;
 }
 
 #root {
