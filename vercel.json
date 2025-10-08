@@ -8,6 +8,10 @@
       "dest": "/assets/$1"
     },
     {
+      "src": "/jd-favicon.svg",
+      "dest": "/jd-favicon.svg"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
